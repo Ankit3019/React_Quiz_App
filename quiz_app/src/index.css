@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+}
+
+@layer components {
+  .loader {
+    @apply w-16 h-16 border-4 border-blue-500 border-dashed rounded-full animate-spin;
+  }
+  
+  .confetti {
+    @apply fixed w-2 h-2 bg-current;
+  }
+}
+
+@keyframes confetti {
+  0% { transform: translateY(0) rotate(0); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+.animate-confetti {
+  animation: confetti 2s linear forwards;
+}
